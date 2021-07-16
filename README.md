@@ -7,5 +7,5 @@ _In this repository, I uploads my Design and Analysis of Algorithms lab assignme
 - **Class roll no.:** _11_
 - **University roll no.:** _2014579_
 - **Subject:** _Design and Analysis of Algorithms Lab_
--**Subject code:** _PCS-505_
+- **Subject code:** _PCS-505_
 

@@ -38,5 +38,5 @@ int main()
         cin>>inputArray[j];
         linearSearch(noOfElements,inputArray,keyElement);
     }
-    return ;
+    return 0;
 }

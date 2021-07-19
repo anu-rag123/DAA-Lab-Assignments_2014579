@@ -6,7 +6,7 @@ void jumpSearch(int noOfElements , int arr[], int keyElement)
 {
     int lowerLimit = 0 , upperLimit = 2 , totalComparisons = 0, flag = 0;
     
-    //Bound Foundation Algo
+    //Bound Founding Algo
     while(1)
     {
         if(keyElement > arr[lowerLimit] && keyElement < arr[upperLimit])

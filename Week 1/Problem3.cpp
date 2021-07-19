@@ -72,5 +72,5 @@ int main()
         cin>>keyElement;
         jumpSearch(noOfElements,arr,keyElement);
     }
-    return;
+    return 0;
 }

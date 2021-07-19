@@ -4,56 +4,50 @@ using namespace std;
 //Jump Search Algo
 void jumpSearch(int noOfElements , int arr[], int keyElement)
 {
-    int lowerLimit = 0 , upperLimit = 2 , totalComparisons = 0;
+    int lowerLimit = 0 , upperLimit = 2 , totalComparisons = 0, flag = 0;
+    
+    //Bound Foundation Algo
     while(1)
     {
-        totalComparisons++;
-         if(keyElement > arr[lowerLimit] && keyElement < arr[upperLimit])
-         {
-             for(int i = lowerLimit + 1; i < upperLimit; i++)
-             {
-                 if(arr[i] == keyElement)
-                 {
-                     totalComparisons++;
-                     cout<<"Present"<<" "<<totalComparisons;
-                     return;
-                 } 
-                 
-                 else
-                 totalComparisons++;
-             }
-         }
-         
-         else if(keyElement == arr[lowerLimit] || keyElement == arr[upperLimit])
-         {
+        if(keyElement > arr[lowerLimit] && keyElement < arr[upperLimit])
+        break;
+        
+        else if(keyElement == arr[lowerLimit] || keyElement == arr[upperLimit])
+        {
              totalComparisons++;
              cout<<"Present"<<" "<<totalComparisons;
              return;
-         }
-         lowerLimit = upperLimit;
-         upperLimit = upperLimit * 2;
-         if(upperLimit > noOfElements - 1)
-         {
-             if(keyElement <= arr[noOfElements - 1])
-             {
-                 for(int i = lowerLimit; i < noOfElements; i++)
-                 {
-                     if(keyElement == arr[i])
-                     {
-                         totalComparisons++;
-                         cout<<"Present"<<" "<<totalComparisons;
-                         return;
-                     }
-                     
-                     else
-                     totalComparisons++;
-                 }
-                 break;
-             }
-             else
-             break;
-         }
-         
+        }
+       
+        lowerLimit = upperLimit;
+        upperLimit = upperLimit * 2;
+       
+       if(flag == 1)
+       {
+           cout<<"Not Present"<<" "<<totalComparisons;
+           return;
+       }
+       
+        if(upperLimit >= noOfElements - 1)
+        {
+            flag = 1;
+            upperLimit = noOfElements - 1;
+        }
+        
+    }
+    
+    //Linear Search Algo inside Bound
+    for(int i = lowerLimit + 1; i < upperLimit; i++)
+    {
+        if(arr[i] == keyElement)
+        {
+            totalComparisons++;
+            cout<<"Present"<<" "<<totalComparisons;
+            return;
+        } 
+        
+        else
+        totalComparisons++;
     }
     cout<<"Not Present"<<" "<<totalComparisons;
 }
